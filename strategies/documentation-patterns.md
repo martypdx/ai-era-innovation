@@ -88,6 +88,41 @@ Avoid overloaded terms from dominant frameworks.
 - Don't say "component lifecycle" if you don't have one
 - Create fresh terminology for fresh concepts
 
+### 8. LLM Mental Model Documents
+
+Instead of writing documentation FOR the AI, have the AI write its understanding and you correct it.
+
+**The pattern:**
+1. Create a document where the LLM makes its mental model explicit
+2. Include: what it thinks it understands, uncertainties, questions, and where its biases might show
+3. Human reviews and provides corrections
+4. LLM updates the document iteratively
+
+**Why it works:**
+- Surfaces hidden assumptions and biases the LLM has absorbed from training
+- Creates documentation that directly addresses what the LLM gets wrong
+- The corrections become highly targeted training signal
+- Produces docs that anticipate AI misunderstandings (because they came from AI misunderstandings)
+
+**Example structure:**
+```markdown
+# My Mental Model of [Framework]
+
+## What I Believe I Understand
+[LLM writes its understanding with contrasts to dominant frameworks]
+
+## Where My [React/etc] Bias Might Be Showing
+[LLM identifies its own potential misconceptions]
+
+## Questions I Have
+[Gaps that need clarification]
+
+## Inconsistencies I Notice
+[Self-identified contradictions in understanding]
+```
+
+*See: `/azoth/docs/MENTAL-MODEL.md` for a live example of this pattern.*
+
 ---
 
 ## Meta-Observation
