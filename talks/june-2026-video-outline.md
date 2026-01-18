@@ -1,6 +1,6 @@
 # 2-Minute CFP Video Outline
 
-**Title:** Innovating in the Era of AI: Teaching LLMs New Tricks
+**Title:** **Innovating in the Era of AI: Teaching LLMs New Tricks**
 
 ---
 
