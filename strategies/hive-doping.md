@@ -156,11 +156,13 @@ Making offerings to the AI god. "Please know how to do this thing." No verificat
 
 This is the uncomfortable middle. People here are:
 
-- **Underskilled** — They want to leverage AI but don't have the expertise to guide it or catch its mistakes. They're not vibe coding by choice; they just don't know what they don't know.
+- **Unskilled** — They want to leverage AI but have no expertise to guide it or catch its mistakes. They're not avoiding or vibe coding by choice; they just don't know what they don't know.
 
-- **Resistant** — They have skills but won't engage. Maybe burned by hype cycles before. Maybe don't want to "depend on AI." Watching from the sidelines while the game changes.
+- **Underskilled** — Some technical ability without process knowledge. Can write code, but lack the workflows, validation habits, and system thinking that make it shippable. May be excited or averse—either way, they hit walls they can't diagnose.
 
-- **Change-averse** — Deeper resistance to industry transformation or social change. "This is how we've always done it." The tooling isn't the issue; the adaptation is.
+- **Resistant** — They have skills but won't engage. Burned by hype cycles before. Don't want to "depend on AI." Watching from the sidelines while the game changes.
+
+- **Change-averse** — Deeper resistance to industry transformation or social change. "This is how we've always done it." It's about identity.
 
 **The squeeze:** Pressure from both directions. Vibe coders flooding the market with cheap, fragile work. Hive dopers shipping at 10x throughput with fewer defects. The gap is not a stable place to stand.
 
