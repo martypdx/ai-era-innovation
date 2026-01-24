@@ -1,4 +1,6 @@
-# Response to "The CTO's Methodological Pivot"
+# Jedis, Not Stormtroopers
+
+*A response to "The CTO's Methodological Pivot"*
 
 **Original article:** [The CTO's Methodological Pivot](https://ctosub.com/p/the-ctos-methodological-pivot) by Etienne de Bruin  
 **LinkedIn post:** [Link](https://www.linkedin.com/posts/etdebruin_cto-agile-ai-activity-7420297716188074007-omqe)
@@ -11,21 +13,19 @@
 
 Etienne makes excellent observations about context and precision. But I think he's drawing the wrong conclusion.
 
-In traditional Agile, much of the context lived in the minds of team members. This is arguably why Agile adoption rarely achieved its promise. Even "documentation" efforts were backfilled—how to work with a project, not the shared context behind decisions.
+His argument assumes LLMs need specs because they can't handle ambiguity. It's backwards: **LLMs handle ambiguity by making silent assumptions.** Every gap in a spec forces a silent decision. The LLM picks what seems likely—but "likely" isn't "what you wanted."
 
-With LLMs, we now need to make that context explicit. That's a Universal Design win—we'll all be better developers because of it.
+The solution isn't front-loading decisions into exhaustive specs. You can't specify what you don't know yet — or what you don't know the LLM doesn't know. The solution is collaboration where ambiguity surfaces through building.
 
-**But assuming this means spec-first is an unfounded leap.**
+With LLMs, we need to make context explicit — the stuff that used to just live in people's heads. That's a Universal Design win. But that's not spec-first. It's context-alongside-code: files that live with the code, built during development, read by both humans and agents.
 
-Agile has always focused on *the right amount of planning*—that boundary between intentionality and speculation. AI doesn't change this. It requires that we develop context and code *in the same chunk*, collaboratively with our LLM.
+At its heart, **Agile is an incremental process, not an iterative one.** Iteration is waste—it's rework. The goal is moving forward, each step complete and whole.
 
-At its heart, **Agile is an incremental process, not an iterative one.** Iteration, while sometimes unavoidable, is waste. It's rework. The goal is to move forward without looking back. You make incremental gains that are complete and whole.
+AI doesn't change this. It amplifies it. Develop context and code in the same chunk, collaboratively with your LLM. Capture decisions as you make them. Let understanding emerge through building.
 
-In the LLM era, this means context that doesn't live in the code needs to live *in files alongside the code*. That's how we answer the maintenance question—not by writing exhaustive specs upfront.
+Spec-first treats the LLM as a tool to command. But they work better as partners who surface what they don't know. Everyone is trying to build Stormtroopers when we should be making Jedis.
 
-Most folks are copying enterprise SDLC circa 2025, which isn't strictly Agile (for good reasons at the time). But now we have the opportunity to fulfill *true* Agile development.
-
-**Everyone is trying to build Stormtroopers when we should be making Jedis.**
+*(Co-written with Claude — which is kind of the point.)*
 
 ---
 
@@ -42,9 +42,7 @@ Most folks are copying enterprise SDLC circa 2025, which isn't strictly Agile (f
 - **"Spec-first works for my team"** — Some orgs have seen success with structured prompting (Kiro-style). Your counter: that's fine for certain work, but it's not *Agile*—it's a different tool for a different job.
 
 ### Tone check:
-- Currently reads as thoughtful disagreement, not attack. Good.
-- The "read that again" line might land as slightly condescending to some readers. Consider softening or cutting.
-- Could benefit from acknowledging what Etienne gets right before pivoting to disagreement.
+- Reads as thoughtful disagreement, not attack. Good.
 
 ### Missing elements to consider:
 
@@ -98,41 +96,67 @@ When I'm treated as a collaborator who can ask questions and build understanding
 
 **The uncomfortable truth:** Spec-first treats the LLM as a compiler. It assumes the hard work is the spec, and the LLM's job is to "just" translate it to code. But translation is the easy part. Understanding is the hard part. And understanding happens through building, not before it.
 
-### Why This Matters for the Debate
+---
 
-Etienne's argument assumes that LLMs need specs because they can't handle ambiguity. But that's backwards. **LLMs handle ambiguity by making silent assumptions.** The solution isn't to front-load all decisions into a spec (impossible—you don't know what you don't know). The solution is to create a collaboration pattern where:
+## Challenge to Humans
 
-1. Ambiguity surfaces through building
-2. Decisions get made explicitly through conversation
-3. Context gets captured alongside the code for future sessions
+If you're coding with an LLM and you haven't learned something from it, you're doing it wrong.
 
-That's not waterfall with AI execution. That's Agile with AI collaboration.
+The collaboration should flow both ways. The LLM surfaces what it doesn't know — but it also surfaces what *you* didn't know you didn't know. If every session ends with you knowing exactly what you knew before, you're treating it as a typewriter, not a partner.
 
 ---
 
 ## Draft Comment for LinkedIn Post
 
-> Thought-provoking piece, Etienne. The Royce history and METR findings are valuable context.
->
-> I'd push back on one assumption: that spec-first is the answer.
->
-> Spec-driven development struggled for humans—not because of execution, but because requirements emerge through building. The feedback loop IS the value. LLMs don't change this; if anything, they amplify it.
->
-> What AI does demand is *explicit context*—the tribal knowledge that used to live in team members' heads now needs to live in files alongside the code. That's the real shift.
->
-> But that's not "waterfall execution." That's Agile finally having the tooling to fulfill its promise: incremental progress where each step is complete, with shared context that persists.
->
-> The distinction that matters isn't spec-first vs vibe-coding. It's: **incremental vs iterative**. Iteration is rework. The goal is moving forward without looking back.
->
-> We're not returning to waterfall. We're getting better at Agile.
+Great framing with the Royce history, Etienne.
+
+But I'd push back on spec-first being the answer. LLMs don't struggle with ambiguity, they handle it by making silent assumptions. More spec doesn't fix that. Collaboration does.
+
+Yes, we need explicit context. But not all up front, that's waterfall. We finally have the tooling to make Agile work the way it was supposed to.
 
 ---
 
-## Notes for Revision
+## Ready Responses (if challenged)
 
-- [x] ~~Consider softening "read that again" in repost~~ — Removed
-- [x] Add concrete example of context-alongside-code pattern — Added in expanded "Missing elements"
-- [x] Add LLM perspective on Stormtrooper vs Jedi modes — Added new section
-- [ ] Possibly reference Azoth/dashboard work as concrete proof point (WELCOME-LLM.md, MENTAL-MODEL.md are real examples)
-- [ ] Check if "Universal Design" needs explanation for this audience
-- [ ] Consider whether LLM perspective section is too long for LinkedIn—may need condensed version
+**If someone cites the METR study:**
+"The METR findings are real — but they measured vibe-coding with pre-revolution models and no defined process. Different tooling, undefined methodology. That's not what we're talking about."
+
+---
+
+## Open Questions
+
+- Reference Azoth/dashboard work as concrete proof point? (WELCOME-LLM.md, MENTAL-MODEL.md are real examples you're already using)
+- Does "Universal Design" need explanation for this audience?
+
+---
+
+## Content Strategy (Early Planning)
+
+We need a home base and a distribution strategy. Current thinking:
+
+### Home Base: Substack
+- Long-form articles live here
+- This doc could become the first real piece: "Jedis, Not Stormtroopers"
+- The LLM perspective section is strong standalone material
+- Establishes voice and builds subscriber base
+
+### Distribution Channels
+- **LinkedIn**: Professional audience, CTO/engineering leaders, Agile practitioners. Reposts with commentary (like today's) drive traffic back.
+- **Twitter/X**: Shorter takes, threads, engagement with tech discourse
+- **BlueSky**: Tech-forward crowd, good for framework/tooling discussions
+
+### Content Pipeline
+What we've got brewing:
+- This piece (Jedis vs Stormtroopers / response to spec-first)
+- The LLM perspective section (could standalone: "What It's Like to Be Treated as a Tool vs a Partner")
+- The "Challenge to Humans" framing
+- June 2026 talk material (see `talks/june-2026-video-outline.md`)
+
+### Partnership Language
+This content is co-created. When we write, we credit the collaboration — not as gimmick, but as proof of the argument. The process is the product.
+
+### Next Steps
+- [ ] Set up Substack (or evaluate alternatives)
+- [ ] Decide: publish this piece as-is, or expand into full article?
+- [ ] Build a simple content calendar
+- [ ] Identify key voices to engage with (Etienne, others in the AI+Agile space)
