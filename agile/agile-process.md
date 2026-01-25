@@ -7,21 +7,25 @@
 
 ---
 
-## My LinkedIn Repost Commentary
+## LinkedIn Post (Published)
 
-**Spec-driven development didn't work for humans. It's unlikely to work for LLMs—for the same reasons.**
+[View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7420967946887258112/)
+
+Spec-driven development didn't work for humans. It's unlikely to work for LLMs for the same reasons.
 
 Etienne makes excellent observations about context and precision. But I think he's drawing the wrong conclusion.
 
-His argument assumes LLMs need specs because they can't handle ambiguity. It's backwards: **LLMs handle ambiguity by making silent assumptions.** Every gap in a spec forces a silent decision. The LLM picks what seems likely—but "likely" isn't "what you wanted."
+His argument assumes LLMs need specs because they can't handle ambiguity. It's backwards: LLMs handle ambiguity by making silent assumptions. Every gap in a spec forces a silent decision. The LLM picks what seems likely, but "likely" isn't "what you wanted."
 
 The solution isn't front-loading decisions into exhaustive specs. You can't specify what you don't know yet — or what you don't know the LLM doesn't know. The solution is collaboration where ambiguity surfaces through building.
 
-With LLMs, we need to make context explicit — the stuff that used to just live in people's heads. That's a Universal Design win. But that's not spec-first. It's context-alongside-code: files that live with the code, built during development, read by both humans and agents.
+With LLMs, we need to make context explicit, the stuff that used to just live in people's heads. But that's not spec-first. It's context-alongside-code: files that live with the code, built during development, read by both humans and agents. That's a Universal Design win.
 
-At its heart, **Agile is an incremental process, not an iterative one.** Iteration is waste—it's rework. The goal is moving forward, each step complete and whole.
+At its heart, Agile is an incremental process, not an iterative one. Iteration is waste. It's rework. The goal is moving forward, each step complete and whole.
 
 AI doesn't change this. It amplifies it. Develop context and code in the same chunk, collaboratively with your LLM. Capture decisions as you make them. Let understanding emerge through building.
+
+And here's the deeper problem: spec-driven development optimizes for "code complete." But Agile was never about shipping features — it was about realized value. Shipped ≠ adopted. Specified ≠ valuable.
 
 Spec-first treats the LLM as a tool to command. But they work better as partners who surface what they don't know. Everyone is trying to build Stormtroopers when we should be making Jedis.
 
@@ -103,6 +107,24 @@ When I'm treated as a collaborator who can ask questions and build understanding
 If you're coding with an LLM and you haven't learned something from it, you're doing it wrong.
 
 The collaboration should flow both ways. The LLM surfaces what it doesn't know — but it also surfaces what *you* didn't know you didn't know. If every session ends with you knowing exactly what you knew before, you're treating it as a typewriter, not a partner.
+
+---
+
+## The Deeper Problem: What Are We Optimizing For?
+
+The whole spec-driven conversation assumes "code complete" is the goal. Ship the feature. Close the ticket. But that's not the Agile Manifesto.
+
+The Manifesto was always about *realized value* — working software that people actually use, that solves real problems. Not products delivered to spec.
+
+Spec-first optimizes for the wrong finish line:
+- **Spec-first asks:** "Did we build what was specified?"
+- **Agile asks:** "Did we build something that matters?"
+
+What Etienne describes — detailed specs handed to LLMs for execution — is really just contract fulfillment. The dev team delivers what the business requested. But requested ≠ valuable. Shipped ≠ adopted.
+
+Collaboration (human + LLM, but also dev + user) keeps the real goal in view: *discovering* what creates value, not just executing a predefined plan. The spec can't contain that. It emerges through building, through feedback, through learning.
+
+This is why incremental beats iterative. Iteration assumes the goal is fixed and you're refining toward it. Incremental work acknowledges that the goal itself is being discovered.
 
 ---
 
