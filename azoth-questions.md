@@ -126,6 +126,42 @@ There's a streaming JSON parser package.
 
 ---
 
+## Known Issues / Enhancement Requests
+
+### SVG Namespace: Dynamic Attributes Need `setAttribute`
+
+**Problem:** When binding dynamic values to certain SVG element attributes (like `points` on `<polyline>`, `d` on `<path>`, etc.), Azoth generates property assignment:
+
+```js
+element.points = value;  // Fails! points is a read-only getter
+```
+
+But these SVG attributes are read-only getters that return special objects (e.g., `SVGPointList`). They must be set via `setAttribute()`:
+
+```js
+element.setAttribute('points', value);  // Works
+```
+
+**Current workaround:** Build SVG element statically, then use direct DOM manipulation:
+
+```jsx
+const svg = <svg><polyline class="my-line" /></svg>;
+svg.querySelector('.my-line').setAttribute('points', pointsData);
+```
+
+**Proposed fix:** In Thoth (compiler), detect SVG namespace elements and flag certain attributes to use `setAttribute` in the generated bind code. The JSX already knows it's SVG, so this should be a matter of:
+1. Identifying SVG elements (by namespace or element name)
+2. Maintaining a list of attributes that need `setAttribute` treatment
+3. Generating `setAttribute()` calls instead of property assignment for those
+
+**Affected attributes (partial list):**
+- `polyline.points`
+- `path.d`
+- `svg.viewBox` (when dynamic)
+- Possibly others in SVG namespace
+
+---
+
 ## For the Reporting Project Specifically
 
 ### Static Reports (No Interactivity)

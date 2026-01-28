@@ -145,6 +145,68 @@ Yes, we need explicit context. But not all up front, that's waterfall. We finall
 
 ---
 
+## Step Size: The Rhythm of Incremental Development
+
+*Added from observations during wre-dashboards data-driven refactor*
+
+### What is Step Size?
+
+Step size is the amount of change between validations. It's the granularity of your incremental process.
+
+- **Too small:** Work feels tedious. Progress stalls. Each step is obvious.
+- **Too large:** Errors become hard to isolate. Rollback distance increases. Debugging becomes archaeology.
+
+The art is matching step size to uncertainty.
+
+### Human Indicators
+
+Humans have built-in sensors for step size:
+
+- **Frustration:** "This should be working. I don't understand why it isn't." → Step was too large. Multiple changes compounded. Can't isolate the failure.
+- **Boredom:** "This is tedious. I know exactly what will happen." → Step is too small. Could safely do more at once.
+
+These feelings are *information*. They tell you to adjust.
+
+### The LLM Equivalent
+
+**Open question:** What are the LLM indicators that map to frustration and boredom?
+
+Possible candidates:
+- **Unexpected errors in places that shouldn't error** → Equivalent of frustration. Something silent went wrong. Time to reduce step size.
+- **Repeated successful patterns** → Equivalent of confidence. The technique keeps working. Larger steps are safe.
+- **Having to revert and retry** → Clear signal. The step was too big to debug in place.
+
+This is worth exploring together. When an LLM can recognize "I'm in uncertain territory, I should take smaller steps" vs "this is well-understood, I can move faster," the collaboration gets more efficient.
+
+### Concrete Example: LeadActivitiesLine
+
+During the data-driven refactor, most components followed a simple pattern:
+1. Extract hardcoded data to external file
+2. Pass data as props
+3. Verify tests still pass
+
+This worked for 9 components. Step size was appropriate—each change was mechanical.
+
+For `LeadActivitiesLine`, the step combined:
+1. Externalizing data
+2. Changing data format (from SVG point strings to raw values)
+3. Adding computation in the component (transforming values to points)
+
+The rendering broke. But *which* change caused it? Couldn't tell. Had to revert to known-good state and take smaller steps:
+- First: Just move the existing point strings to variables
+- Verify rendering works
+- Then: Externalize to a file
+- Then: Change the data format
+- Then: Add the computation
+
+Each step has a clear validation. If something breaks, you know exactly which change caused it.
+
+### The Principle
+
+**Match step size to certainty.** When patterns are working, go faster. When something unexpected happens, slow down. The system gives feedback—use it.
+
+---
+
 ## Open Questions
 
 - Reference Azoth/dashboard work as concrete proof point? (WELCOME-LLM.md, MENTAL-MODEL.md are real examples you're already using)
