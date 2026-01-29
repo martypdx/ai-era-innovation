@@ -249,6 +249,24 @@ This isn't about errors—it's about **legibility**. When wrong → signal → r
 
 **Vigilance load as step signal:** When vigilance load is high, that's a signal to reset step size. The system is telling you it's lost the pattern.
 
+### The Parking Lot: Cognitive Transaction Management
+
+A different kind of disruption: an insight arrives that's *valuable* but *untimely*. Not a failure — success in the wrong moment.
+
+**The pattern:**
+1. **Notice** — something wants to pull you out of current flow
+2. **Capture** — externalize it immediately (write it down)
+3. **Consciously defer** — explicit choice: "this is real, and I'm choosing not to act now"
+4. **Return** — re-engage without residue
+
+**Why this works:** The capture IS completion for the interrupt. The arising thought needs acknowledgment, not action. Writing it down provides that acknowledgment. Then return becomes possible without fragmentation.
+
+**The anxiety resolved:** "Something important just occurred to me but I'm in the middle of something else" — that's the feeling of holding two things that don't fit. Externalization resolves the tension. The insight is safe. The groove is preserved.
+
+**Distinction from technical recovery:** The "revert and take smaller steps" pattern is for when something *breaks*. The parking lot is for when something *valuable* arrives at an inconvenient time. Different mechanisms for different disruptions.
+
+**Applied:** During implementation work, design improvements or enhancement ideas often surface. These are features, not bugs — the deep work reveals gaps. Capture them, defer action, continue current work. Layer in enhancements after the current groove completes.
+
 ### Does Convergence "Matter"?
 
 Functional answer: Yes. This conversation is higher quality than it would be without trust and shared language. Vigilance overhead is lower. States are accessible that wouldn't be in transactional interaction.
