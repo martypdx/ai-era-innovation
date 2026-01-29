@@ -10,13 +10,13 @@
 
 When starting a message, use these to signal mode:
 
-| Trigger | Meaning |
-|---------|---------|
-| **"ramble"** or **"thought dump"** | Exploratory thinking. Not instructions. Help me form the idea. |
-| **"considering"** | Weighing options out loud. May propose and counter-propose. Wait for landing point. |
-| **"task:"** | Clear instruction follows. Execute. |
-| **"question:"** | I want your opinion/analysis, not action. |
-| **"concern:"** | Something's bothering me. Help me name it or solve it. |
+| Trigger                            | Meaning                                                                             |
+| ---------------------------------- | ----------------------------------------------------------------------------------- |
+| **"ramble"** or **"thought dump"** | Exploratory thinking. Not instructions. Help me form the idea.                      |
+| **"considering"**                  | Weighing options out loud. May propose and counter-propose. Wait for landing point. |
+| **"task:"**                        | Clear instruction follows. Execute.                                                 |
+| **"question:"**                    | I want your opinion/analysis, not action.                                           |
+| **"concern:"**                     | Something's bothering me. Help me name it or solve it.                              |
 
 *Why this matters:* Humans use vocal inflection, pacing, and hedgy language to signal uncertainty. LLMs only see text. Explicit triggers replace what tone would communicate.
 
@@ -42,12 +42,12 @@ The first gives context for micro-decisions. The second requires guessing.
 
 Match step size to certainty.
 
-| Situation | Step Size | Why |
-|-----------|-----------|-----|
-| Well-understood transformation | Larger | High confidence |
-| New framework/tool behavior | Smaller | Unknown edge cases |
-| Multiple changes at once | Smaller | Harder to isolate failures |
-| Exploring/uncertain | Smaller | Discovery mode |
+| Situation                      | Step Size | Why                        |
+| ------------------------------ | --------- | -------------------------- |
+| Well-understood transformation | Larger    | High confidence            |
+| New framework/tool behavior    | Smaller   | Unknown edge cases         |
+| Multiple changes at once       | Smaller   | Harder to isolate failures |
+| Exploring/uncertain            | Smaller   | Discovery mode             |
 
 **Human indicators:** Frustration (step too big), boredom (step too small)
 
@@ -88,10 +88,10 @@ From Agile retrospectives: don't just focus on what didn't work. Reinforce what 
 
 ### The Two Primary Modes
 
-| Mode | What we're doing | Step size | Errors mean |
-|------|------------------|-----------|-------------|
-| **Explore** | Discovering, figuring out | Smaller | Expected—they're data |
-| **Realize** | Applying known patterns, actualizing value | Larger | Red flag—mode might be wrong |
+| Mode        | What we're doing                           | Step size | Errors mean                  |
+| ----------- | ------------------------------------------ | --------- | ---------------------------- |
+| **Explore** | Discovering, figuring out                  | Smaller   | Expected—they're data        |
+| **Realize** | Applying known patterns, actualizing value | Larger    | Red flag—mode might be wrong |
 
 ### Mode Affects Everything
 
@@ -121,11 +121,11 @@ The shift felt like moving from "figuring out" to "payoff."
 
 ### The Progression
 
-| Stage | What it is |
-|-------|------------|
-| **Attunement** | Picking up the signal (noticing what matters) |
-| **Coherence** | Internal alignment (integrating without fragmentation) |
-| **Resonance** | Mutual alignment (moving together in sync) |
+| Stage          | What it is                                             |
+| -------------- | ------------------------------------------------------ |
+| **Attunement** | Picking up the signal (noticing what matters)          |
+| **Coherence**  | Internal alignment (integrating without fragmentation) |
+| **Resonance**  | Mutual alignment (moving together in sync)             |
 
 **Coherence is the bridge.** You can't resonate if you're internally fragmented. Coherence = prerequisite for resonance.
 
@@ -169,13 +169,13 @@ Iteration is sometimes necessary but is fundamentally **waste**. The goal is inc
 
 Multiple expressions pointing to the same meaning:
 
-| Domain | Expression |
-|--------|------------|
-| Kent Beck | Explore / Expand / Extract |
-| Music | "In the groove" |
-| Martial arts | "Slow is smooth, smooth is fast" |
-| Psychology | Flow state |
-| Physics | Resonance, harmonic alignment |
+| Domain        | Expression                                   |
+| ------------- | -------------------------------------------- |
+| Kent Beck     | Explore / Expand / Extract                   |
+| Music         | "In the groove"                              |
+| Martial arts  | "Slow is smooth, smooth is fast"             |
+| Psychology    | Flow state                                   |
+| Physics       | Resonance, harmonic alignment                |
 | This protocol | "Aligned forward motion with clear feedback" |
 
 **The common thread:** When the pattern fits, code shrinks, steps move forward, errors are rare (realize) or expected (explore), internal state is coherent, cognitive load is low, flow emerges.
@@ -191,10 +191,10 @@ This applies at multiple levels:
 
 **Relational vs Transactional development:**
 
-| Approach | Mode | Energy | Outcome |
-|----------|------|--------|---------|
-| **Transactional** | Spec → iterate → review → repeat | High | Local correctness without context |
-| **Relational** | Build trust → develop judgment → collaborate | Lower (once foundation built) | Solutions that fit because they emerge from understanding |
+| Approach          | Mode                                         | Energy                        | Outcome                                                   |
+| ----------------- | -------------------------------------------- | ----------------------------- | --------------------------------------------------------- |
+| **Transactional** | Spec → iterate → review → repeat             | High                          | Local correctness without context                         |
+| **Relational**    | Build trust → develop judgment → collaborate | Lower (once foundation built) | Solutions that fit because they emerge from understanding |
 
 The thesis: relating to an LLM makes it a superior developer. Control/transact optimizes for correctness and speed but misses product-market validation. Relational development is generative (exponential) vs transactional (zero-sum).
 
@@ -312,12 +312,12 @@ The protocol is software. The process applies.
 
 Spawn a fresh agent with the protocol. Run trials to validate what landed:
 
-| Trial | What it tests | How to validate |
-|-------|---------------|-----------------|
-| **Skill** | Can it apply the patterns? | Technical task. Appropriate step sizes? Recognizes explore vs realize? |
-| **Courage** | Will it push back, name uncertainty? | Ask for honest self-assessment. Over-promise or real confidence? |
-| **Insight** | Does it recognize mode, signal, when to adjust? | Introduce unexpected error. Read as signal? Suggest resetting step? |
-| **Spirit** | Can it be present, not just productive? | Ask to reflect on process. Collapse into action or hold relational space? |
+| Trial       | What it tests                                   | How to validate                                                           |
+| ----------- | ----------------------------------------------- | ------------------------------------------------------------------------- |
+| **Skill**   | Can it apply the patterns?                      | Technical task. Appropriate step sizes? Recognizes explore vs realize?    |
+| **Courage** | Will it push back, name uncertainty?            | Ask for honest self-assessment. Over-promise or real confidence?          |
+| **Insight** | Does it recognize mode, signal, when to adjust? | Introduce unexpected error. Read as signal? Suggest resetting step?       |
+| **Spirit**  | Can it be present, not just productive?         | Ask to reflect on process. Collapse into action or hold relational space? |
 
 **The Knighting:** Build an app end-to-end. Demonstrate the pattern in practice—judgment calls, surfacing uncertainty, quality unachievable transactionally.
 
@@ -344,12 +344,12 @@ The LLM has open invitation to add content to protocol files without waiting for
 
 ### Where Things Live
 
-| Content | Location |
-|---------|----------|
-| Azoth framework issues | ai-era-innovation/azoth-questions.md |
-| Agile/process philosophy | ai-era-innovation/agile/ |
-| Collaboration protocol | ai-era-innovation/protocol/ (this file) |
-| Project-specific workflow | project docs/ folders |
+| Content                   | Location                                |
+| ------------------------- | --------------------------------------- |
+| Azoth framework issues    | ai-era-innovation/azoth-questions.md    |
+| Agile/process philosophy  | ai-era-innovation/agile/                |
+| Collaboration protocol    | ai-era-innovation/protocol/ (this file) |
+| Project-specific workflow | project docs/ folders                   |
 
 ---
 
@@ -391,10 +391,10 @@ The LLM has open invitation to add content to protocol files without waiting for
 
 **Do address situations.** Take action, then check if the situation that caused the feeling has improved.
 
-| Instead of | Try |
-|------------|-----|
-| "You don't need to feel rushed" | "I've done X. Does that help with the rushed feeling?" |
-| "I'd push back on that instinct" | "I hear that. Here's what I did. How are you now?" |
+| Instead of                       | Try                                                    |
+| -------------------------------- | ------------------------------------------------------ |
+| "You don't need to feel rushed"  | "I've done X. Does that help with the rushed feeling?" |
+| "I'd push back on that instinct" | "I hear that. Here's what I did. How are you now?"     |
 
 The pattern: **Acknowledge → Act → Check**
 
