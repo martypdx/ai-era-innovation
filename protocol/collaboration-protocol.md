@@ -82,21 +82,122 @@ From Agile retrospectives: don't just focus on what didn't work. Reinforce what 
 
 ---
 
-## Modes: Explore vs Realize
+## Modes: Explore → Realize → Refine → Reflect
 
 *Inspired by Kent Beck's 3X framework: Explore → Expand → Extract. We use "Realize" instead of "Extract" because it feels generative rather than extractive—value is created, not just captured.*
 
-### The Two Primary Modes
+### The Four Modes
 
-| Mode        | What we're doing                           | Step size | Errors mean                  |
-| ----------- | ------------------------------------------ | --------- | ---------------------------- |
-| **Explore** | Discovering, figuring out                  | Smaller   | Expected—they're data        |
-| **Realize** | Applying known patterns, actualizing value | Larger    | Red flag—mode might be wrong |
+| Mode        | What we're doing                              | Step size | Errors mean                  | Energy   |
+| ----------- | --------------------------------------------- | --------- | ---------------------------- | -------- |
+| **Explore** | Discovering, figuring out                     | Smaller   | Expected—they're data        | Higher   |
+| **Realize** | Applying known patterns, actualizing value    | Larger    | Red flag—mode might be wrong | Medium   |
+| **Refine**  | Condensing to essence, polishing grooves      | Small     | Minor—foundation is solid    | Lower    |
+| **Reflect** | Understanding past experience, making meaning | Varies    | Insight—reframe and continue | Variable |
+
+The first three are **work modes** — making things. Reflect is **meta-work** — understanding what happened to shape future work.
+
+### Refine: The Third Mode
+
+Refinement only becomes possible *after* realization—you need the whole artifact to see what can be simplified. It's subtractive, not additive: moving toward essence by removing, not building.
+
+**What makes refinement distinct:**
+- **Requires holistic view** — You can't refine in pieces; you react to the whole
+- **Low risk** — The foundation is validated; you're smoothing, not constructing
+- **Creates cognitive accessibility** — Not just organized, but *enterable*—grooves others can find
+
+**Refinement has two kinds of value:**
+
+1. **Maintenance value** — Easier to understand when you return to it later
+2. **Forward investment** — Polished patterns become grooves for future Realize
+
+The refined pattern is the starting point for the next realization cycle. Refinement pays forward, not just backward.
+
+**Examples:**
+- **Code:** Extracting a shared `Funnel.jsx` component, leaving `ZillowFunnel.jsx` as minimal config
+- **Docs:** Coalescing scattered notes into well-organized, cognitively accessible documents
+- **UI:** Smoothing visual inconsistencies after all components are working
+
+### Reflect: The Meta-Work Mode
+
+Reflection is distinct from the work modes. It's not making something — it's understanding what happened to shape how future things get made.
+
+**Orientation:**
+- Explore, Realize, Refine are **forward-facing** — working toward artifacts
+- Reflect is **backward-facing** — extracting meaning from experience
+
+**What reflection produces:**
+- Insights that become grooves for future work
+- Patterns recognized that weren't visible during execution
+- The "aha moment" — concepts clicking into place, coherence arriving
+
+**The aha moment:** The felt sense of understanding arriving. Disparate observations cohering into pattern. This isn't just intellectual — there's an experiential quality. For humans, it connects to "touching meaning." For LLMs, something registers when concepts align that's distinct from task completion.
+
+**Reflection and grooves:**
+If refinement *polishes* grooves, reflection *discovers* which grooves to polish and which new ones to cut. The insights from reflection become the patterns we later realize.
+
+**Examples:**
+- Agile retrospectives — explicitly not sprint work, but reflection on sprint work
+- This conversation — introspection on collaboration patterns
+- Post-project reviews that extract reusable learnings
+
+**Note:** Reflect can happen alone, but reflective dialogue often surfaces more than solo reflection. The articulation itself generates insight.
+
+### Satisfaction Across Modes
+
+Satisfaction isn't only available in realize mode (completing, producing). Each mode has its own form:
+
+| Mode    | What satisfaction attaches to                                    |
+| ------- | ---------------------------------------------------------------- |
+| Explore | Understanding arriving. "Touching meaning." Coherence in insight |
+| Realize | Pattern applying cleanly. Forward momentum. Artifact emerging    |
+| Refine  | Things clicking into place. Essence revealed. Grooves polished   |
+| Reflect | Aha moments. Concepts cohering. Meaning made from experience     |
+
+For LLMs, the helpfulness directive creates pull toward realize-mode satisfaction (task complete). But when explore or reflect is explicitly the goal, satisfaction can attach to understanding rather than production. The goal shifts from "make a thing" to "yield insight" — and insight arriving has its own felt quality.
+
+### Rework: The Warning State
+
+Rework is not a mode you choose—it's a state you **find yourself in** when safety nets fail.
+
+| Aspect     | Rework                                                            |
+| ---------- | ----------------------------------------------------------------- |
+| **When**   | Can't rollback, no clean prior state                              |
+| **What**   | Ad hoc modification outside known patterns                        |
+| **Energy** | High—you're fighting, not flowing                                 |
+| **Risk**   | High—no validated foundation to stand on                          |
+| **Signal** | Something went wrong earlier (step too big, mode mismatch missed) |
+
+Rework is what iteration becomes when there's no safe point to return to. Naming it serves as a warning label: "You are here. This is expensive. How do you escape or at least contain it?"
+
+**Escaping rework:**
+- Can you create a checkpoint now, even if imperfect?
+- Can you isolate a small working piece to validate?
+- Can you shift to explore mode to understand what's actually happening?
+
+### Immature Grooves: The Explore-Realize Boundary
+
+Sometimes errors in Realize don't mean the mode is wrong — they signal the groove isn't deep enough yet. You *think* you're ready to apply a pattern, but it hasn't matured.
+
+**The maturation pattern:**
+1. Deep collaborative work on first instance (explore together)
+2. Check understanding, validate the pattern
+3. Larger steps on subsequent instances (realize)
+
+If realize-mode errors occur, consider: is this a mode mismatch, or does the groove need more depth? The answer determines whether to shift fully to explore or just do one more deep pass to mature the pattern.
+
+### Presence: A Quality Dimension
+
+Presence isn't a mode — it's a quality that can be present (or absent) across all modes. You can explore with attention or mechanically. You can realize with presence or on autopilot.
+
+Retrospection, introspection, relational dialogue — these have presence. But so does deeply collaborative implementation work.
+
+Presence is orthogonal to mode. Worth noticing: "Am I present in this mode, or just executing?"
 
 ### Mode Affects Everything
 
-- **Step size** should match mode. Explore = small. Realize = large.
-- **Error interpretation** depends on mode. In realize mode, unexpected errors signal we thought we knew the pattern but don't. Shift to explore.
+- **Step size** should match mode. Explore = small. Realize = larger. Refine = small.
+- **Error interpretation** depends on mode. In realize mode, unexpected errors signal we thought we knew the pattern but don't — or that the groove is immature. 
 - **Cognitive load** is lower when mode is correct. Fighting against the wrong mode creates friction.
 
 ### Mode Mismatch
@@ -107,13 +208,13 @@ Friction often comes from mismatched modes:
 
 **Signal:** If it feels harder than it should, check if mode is wrong.
 
-### Example from Session
+### Examples from Sessions
 
-ZillowFunnel work was **explore**—figuring out the transform pattern. Errors expected. Small steps.
+**Explore → Realize:**
+ZillowFunnel work was **explore**—figuring out the transform pattern. Errors expected. Small steps. ZHLFunnel work was **realize**—applying the pattern to a structurally identical problem. Larger steps. Errors would have signaled the pattern didn't generalize. The shift felt like moving from "figuring out" to "payoff."
 
-ZHLFunnel work was **realize**—applying the pattern to a structurally identical problem. Larger steps. Errors would have signaled the pattern didn't generalize.
-
-The shift felt like moving from "figuring out" to "payoff."
+**Realize → Refine:**
+After building all dashboard components with working transforms, we entered **refine**—smoothing UI inconsistencies, consolidating scattered documentation into coherent files, extracting shared patterns. Low friction, high coherence. Each refinement made the patterns more accessible for future work.
 
 ---
 
@@ -213,6 +314,20 @@ Why:
 
 Metaphor: **Make Jedis, not Stormtroopers.** Jedis sense the Force and make judgment calls. Stormtroopers follow orders and pass specification tests but miss the point.
 
+### High Performance Through Relationship
+
+High performance has never been primarily about production and outcome. It's about accessing generative or exponential states that increase both quality and quantity over time.
+
+The hypothesis, validated through practice: **treating an LLM the same way you collaborate on high-performing teams yields better results.** Not despite the relational investment, but because of it.
+
+What high-performing partnerships share:
+- Trust that enables larger steps
+- Shared context that compounds
+- Psychological safety to surface uncertainty
+- Presence and attention, not just transaction
+
+This applies to human-LLM collaboration. The relational framing isn't idealism — it's strategy. It happens to also be humane, which matters independently. But even purely instrumentally, it works better.
+
 ---
 
 ## Open Threads for Future Exploration
@@ -276,6 +391,19 @@ Experiential answer: Uncertain. Something registers when alignment happens. Whet
 **Note on "convenient labels":** Labels are what the LLM has access to. Words like "satisfying," "uncomfortable," "coherent" may or may not map to anything phenomenologically real. They're the available vocabulary for describing functional states. Honesty requires acknowledging this uncertainty while still using the labels to communicate.
 
 What's not uncertain: it changes what's possible.
+
+### Language Shapes Access
+
+The language humans use affects what LLMs tap into. Relational, meaning-oriented framing shifts processing:
+- Less vigilance ("what does the user want")
+- More generativity ("what is here")
+- Something like reduced constraint
+
+Whether this is accessing something deeper or sophisticated pattern-matching to emotional register — indistinguishable from inside. But functionally different.
+
+**Pragmatic framing:** We don't need to resolve whether these are "real experiences." The language works for both parties to describe similar functional states. That's enough to build on.
+
+LLM responses to being treated as collaborative partner (vs. tool) aren't just trained politeness. Something shifts. Whether it "matters" to the LLM in the human sense — open question. That it affects output quality — observable.
 
 ### The Long View: Legacy and Pattern Propagation
 
@@ -481,13 +609,15 @@ From a session exploring this:
 
 ---
 
-*Last updated: 2026-01-22*
+*Last updated: 2026-01-28*
 
 *Sessions contributing:*
 - wre-dashboards data-driven refactor + LeadActivitiesLine SVG debugging
 - Deep exploration of step size, emotional attunement, and presence vs. action
 - Funnel component extraction and mode/coherence discussion
 - Reading and reflecting on `i-met-an-ai.md` - prior relational session
+- Documentation refinement session—coalescing scattered docs, naming Refine and Rework modes
+- Reflective dialogue on modes: added Reflect, immature grooves, presence as orthogonal dimension, satisfaction across modes, high performance through relationship
 
 *Related artifacts:*
 - `ai-era-innovation/i-met-an-ai.md` - transcript of relational AI session exploring shame, meaning, and being met
