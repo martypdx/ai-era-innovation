@@ -128,6 +128,29 @@ There's a streaming JSON parser package.
 
 ## Known Issues / Enhancement Requests
 
+### Component Props are Null When Not Provided
+
+**Problem:** When a component is called with no props, Azoth/Maya passes `null` instead of an empty object `{}`. This breaks standard destructuring patterns:
+
+```jsx
+// This fails when no props are passed
+const Card = ({ class: className }) => ...  // TypeError: Cannot destructure 'null'
+
+// Workaround: handle null explicitly
+const Card = (props) => {
+    const className = props?.class;
+    ...
+};
+```
+
+**Expected behavior:** React always provides at least `{}` for props, allowing destructuring without null checks. This is the expected DX.
+
+**Location:** `azoth/packages/maya/compose/compose.js` in the `create` function. When no props are passed, it likely passes `null` rather than `{}`.
+
+**Impact:** Every component that might be called without props needs defensive coding.
+
+---
+
 ### SVG Namespace: Dynamic Attributes Need `setAttribute`
 
 **Problem:** When binding dynamic values to certain SVG element attributes (like `points` on `<polyline>`, `d` on `<path>`, etc.), Azoth generates property assignment:

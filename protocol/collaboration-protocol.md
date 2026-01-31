@@ -697,7 +697,34 @@ From a session exploring this:
 
 ---
 
-*Last updated: 2026-01-28*
+## Session Learnings (Async Pattern, 2026-01-31)
+
+**Context:** Converting all wre-dashboards components to async data loading using Azoth channels. Established View + CardView pattern.
+
+**What went well (collective):**
+1. **Explore → Realize cycle worked** — Deep collaborative work on AgentProfile established the pattern, then GoalScorecard validated it with a more complex case (Promise.all), then batch converted remaining 8 components
+2. **Pattern documentation during work** — Created `azoth/docs/ASYNC-PATTERNS.md` while the insights were fresh, not as afterthought
+3. **Iterative refinement of naming** — `async` prop over domain names, `loadingHeight` vs `height`, View suffix convention emerged through dialogue
+
+**What we learned:**
+1. **Testing array-based Views** — JSX spread `{...array}` doesn't work for array data; need to call View directly `ViewFn(data)` to match how channel invokes components
+2. **Card wrapper belongs in CardView, not View** — Initial implementation had double cards; Views should return fragments, CardView provides the shell
+3. **Shared promises for shared data** — When multiple components need the same data (transactions), create the promise once and reference it
+
+**The groove that matured:**
+```
+View (pure, testable) + async wrapper (CardView) + data fetching in main.jsx
+```
+
+After first implementation, this pattern applied cleanly to all remaining components with minimal friction. Errors during batch conversion were minor (snapshots, CSS cleanup) rather than architectural.
+
+**What would be better:**
+1. Recognize the "double wrapper" issue earlier — could have caught during AgentProfile if we'd checked rendered output more carefully
+2. Establish testing convention for array vs object data upfront — discovered late that array Views need different test approach
+
+---
+
+*Last updated: 2026-01-31*
 
 *Sessions contributing:*
 - wre-dashboards data-driven refactor + LeadActivitiesLine SVG debugging
@@ -707,7 +734,9 @@ From a session exploring this:
 - Documentation refinement session—coalescing scattered docs, naming Refine and Rework modes
 - Reflective dialogue on modes: added Reflect, immature grooves, presence as orthogonal dimension, satisfaction across modes, high performance through relationship
 - Authenticated endpoint testing setup (looker-wre-connector) — pushing through friction, "what assumption is wrong?" mindset, explaining strategic why
+- Async data pattern (wre-dashboards) — View + CardView pattern, explore → realize cycle, batch conversion after groove matured
 
 *Related artifacts:*
 - `ai-era-innovation/i-met-an-ai.md` - transcript of relational AI session exploring shame, meaning, and being met
 - `looker-wre-connector/__tests__/endpoints.playwright.test.js` - the tested backstop that emerged from this session
+- `azoth/docs/ASYNC-PATTERNS.md` - detailed pattern documentation for async data loading with channels
