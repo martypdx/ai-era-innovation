@@ -39,17 +39,17 @@ const [Count, List] = use(fetchData(),
 ```
 
 ### 2. The Project Architecture
-📄 `looker-wre-connector/docs/pivot-feasibility.md`
+📄 `wre-dashboard-api/docs/pivot-feasibility.md`
 
 Understand what we're building and why. Apps Script backend, client-side rendering, existing service layer. The decisions are made — your job is to execute within them.
 
 ### 3. The Development Workflow
-📄 `looker-wre-connector/docs/visualization-workflow.md`
+📄 `wre-dashboard-api/docs/visualization-workflow.md`
 
 You have superpowers here. You can write HTML, render it in a browser, take screenshots, and see the results. Use this tight feedback loop. Static HTML first, then templatize.
 
 ### 4. The Domain Requirements
-📄 `looker-wre-connector/docs/agent-dashboard-requirements.md`
+📄 `wre-dashboard-api/docs/agent-dashboard-requirements.md`
 
 This is the work to be done. Real estate agent performance dashboards. The requirements are still being refined — expect to help shape them, not just implement specs.
 
@@ -95,9 +95,9 @@ You're not just building a dashboard. You're participating in research on AI + d
 | What | Where |
 |------|-------|
 | Azoth framework | `azoth/` |
-| Dashboard project | `looker-wre-connector/` |
+| Dashboard project | `wre-dashboard-api/` |
 | AI strategies | `ai-era-innovation/` |
-| Existing data services | `looker-wre-connector/src/services/` |
+| Existing data services | `wre-dashboard-api/src/services/` |
 | Test examples | `azoth/packages/vahalla/smoke.test.tsx` |
 | **Azoth sandbox** | `azoth/packages/vahalla/sandbox.test.tsx` |
 | Compiler deep-dive | `azoth/packages/thoth/COMPILER.md` |

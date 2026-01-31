@@ -45,4 +45,4 @@ The JSX syntax looks similar. The mental model is opposite.
 
 ---
 
-*This case study is being developed alongside the [WRE Reporting Project](../related/looker-wre-connector/docs/pivot-feasibility.md)*
+*This case study is being developed alongside the [WRE Reporting Project](../related/wre-dashboard-api/docs/pivot-feasibility.md)*

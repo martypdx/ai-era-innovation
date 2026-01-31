@@ -10,7 +10,7 @@ Analysis of Azoth's Vite plugin compatibility with current and future Vite versi
 |---------|------|--------|-------|
 | **Azoth monorepo** | ^5.2.8 | ^1.4.0 | Root devDependencies |
 | **Azoth vite-plugin** | ^5.0.12 | — | peerDependency |
-| **looker-wre-connector** | ^5.0.0 | ^1.0.0 | Current project |
+| **wre-dashboard-api** | ^5.0.0 | ^1.0.0 | Current project |
 
 **Good news:** Both projects are already on Vite 5.x. The Azoth plugin's peer dependency (`^5.0.12`) is compatible with the connector's Vite version.
 
@@ -123,7 +123,7 @@ If staying current matters, plan Vite 7 upgrade:
 
 ## Action Items
 
-- [ ] Test Azoth plugin with looker-wre-connector's Vite config
+- [ ] Test Azoth plugin with wre-dashboard-api's Vite config
 - [ ] Verify template injection works with Apps Script HTML output
 - [ ] Consider Vite 6 upgrade for Azoth (non-blocking)
 - [ ] Document Node version requirements

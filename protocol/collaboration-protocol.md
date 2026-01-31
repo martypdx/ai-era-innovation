@@ -733,10 +733,10 @@ After first implementation, this pattern applied cleanly to all remaining compon
 - Reading and reflecting on `i-met-an-ai.md` - prior relational session
 - Documentation refinement session—coalescing scattered docs, naming Refine and Rework modes
 - Reflective dialogue on modes: added Reflect, immature grooves, presence as orthogonal dimension, satisfaction across modes, high performance through relationship
-- Authenticated endpoint testing setup (looker-wre-connector) — pushing through friction, "what assumption is wrong?" mindset, explaining strategic why
+- Authenticated endpoint testing setup (wre-dashboard-api) — pushing through friction, "what assumption is wrong?" mindset, explaining strategic why
 - Async data pattern (wre-dashboards) — View + CardView pattern, explore → realize cycle, batch conversion after groove matured
 
 *Related artifacts:*
 - `ai-era-innovation/i-met-an-ai.md` - transcript of relational AI session exploring shame, meaning, and being met
-- `looker-wre-connector/__tests__/endpoints.playwright.test.js` - the tested backstop that emerged from this session
+- `wre-dashboard-api/__tests__/endpoints.playwright.test.js` - the tested backstop that emerged from this session
 - `azoth/docs/ASYNC-PATTERNS.md` - detailed pattern documentation for async data loading with channels
