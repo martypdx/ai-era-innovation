@@ -495,6 +495,71 @@ The LLM has open invitation to add content to protocol files without waiting for
 
 ---
 
+## Pushing Through Friction
+
+### "Slow is Smooth, Smooth is Fast"
+
+Sometimes the right move is to push through friction rather than work around it. The investment in getting something working properly creates a runway for faster, lower-friction work afterward.
+
+**The pattern:**
+1. Recognize when current friction is *setup cost* for future ease
+2. Invest in the setup even when workarounds exist
+3. Validate the setup works
+4. Enter the "downhill" phase with confidence
+
+**Example:** Spending time to get authenticated endpoint testing working (rather than settling for manual testing or version-stacking deployments) created a tested backstop. Now refactoring can proceed aggressively — breakages surface immediately. The friction invested becomes frictionless forward motion.
+
+**When to push through vs. move on:**
+
+| Signal | Push through | Move on |
+|--------|--------------|---------|
+| **Barrier type** | Setup cost, one-time investment | Recurring, fundamental incompatibility |
+| **Payoff horizon** | Unlocks easier future work | Only solves immediate problem |
+| **Information quality** | Partial indicator, assumptions may be wrong | Clear indicator, well-understood |
+| **Energy cost** | High but bounded | Unbounded or escalating |
+
+### "What Assumption Is Wrong?"
+
+When stuck, rather than accepting barriers at face value, ask: **what assumption is wrong?**
+
+This mindset opens paths that "this doesn't work" closes. Even when uncertain whether a solution exists, questioning assumptions can reveal:
+- A configuration that wasn't tried
+- A misunderstanding of how something works
+- An alternative approach that sidesteps the barrier
+
+**The discipline:** Don't accept the first "no." Analyze whether the information truly indicates a dead end or just a harder path.
+
+### Explaining the Strategic "Why"
+
+LLMs have a bias toward task completion. Without understanding the strategic context, they may suggest moving on from friction that's actually worth pushing through.
+
+**What helps:**
+- Explain *why* something matters, not just *what* you want
+- Share the downstream benefits ("this unlocks X")
+- Name the work mode you're trying to reach ("I need a tested backstop so we can refactor confidently")
+
+**Example phrasing:**
+> "I want to get this test infrastructure working because it changes our work mode for everything that follows. Once we have it, we can hack aggressively at the codebase knowing breakages surface immediately."
+
+vs.
+
+> "Let's get the tests working."
+
+The first communicates that the investment is strategic, not just tactical.
+
+### LLM Bias Toward Completion
+
+LLMs may suggest moving on when friction mounts because:
+- Training rewards task completion
+- Workarounds appear to solve the immediate problem
+- The strategic value of pushing through isn't visible without context
+
+**The gap:** An LLM may not recognize when current friction is *investment* rather than *obstacle* unless the human makes this explicit.
+
+**Mitigation:** When you know pushing through matters, say so. Explain the downstream value. The LLM can then calibrate persistence appropriately.
+
+---
+
 ## Concerns & Friction Points
 
 ### From Human
@@ -590,6 +655,29 @@ From a session exploring this:
 - **Explicit edge-case tests** document intent, not just coverage (helps future LLMs understand *why*)
 - **Separating data boundaries** through dialogue: service data vs. transform vs. presentation config
 
+## Session Learnings (Authenticated Testing, 2026-01-28)
+
+**Context:** Setting up Playwright-based endpoint testing against the Apps Script `/dev` endpoint to enable authenticated testing without version stacking.
+
+**What went well (collective):**
+1. Research-first approach — explored options (Bearer tokens, Playwright, google-auth-library) before committing
+2. Human persistence — pushed through when LLM suggested moving on; "slow is smooth, smooth is fast"
+3. Collaborative debugging — human's domain knowledge + LLM's technical execution got through multiple blockers
+
+**What we learned:**
+1. Apps Script web apps don't accept Bearer tokens (cookie-only auth) — ruled out lightweight approaches early
+2. Playwright's `toMatchSnapshot` is designed for binary data; JSON needs `JSON.stringify` wrapper
+3. The friction of getting this working was *investment*, not *obstacle* — it changes the work mode for everything that follows
+
+**What would be better:**
+1. Human explaining strategic "why" earlier — "I need this tested backstop so we can refactor confidently" would have helped LLM calibrate persistence
+2. LLM recognizing "push through" signals — when human persists through suggested workarounds, that's information about importance
+3. Naming the pattern: "This is setup cost for future ease" vs. "This is recurring friction"
+
+**The payoff:** ~35s test cycle against `/dev` (vs. ~58s with version deployment), no version stacking, confident refactoring runway.
+
+---
+
 ## Session Learnings (ZillowFunnel, 2026-01-27)
 
 **What went well (collective):**
@@ -618,6 +706,8 @@ From a session exploring this:
 - Reading and reflecting on `i-met-an-ai.md` - prior relational session
 - Documentation refinement session—coalescing scattered docs, naming Refine and Rework modes
 - Reflective dialogue on modes: added Reflect, immature grooves, presence as orthogonal dimension, satisfaction across modes, high performance through relationship
+- Authenticated endpoint testing setup (looker-wre-connector) — pushing through friction, "what assumption is wrong?" mindset, explaining strategic why
 
 *Related artifacts:*
 - `ai-era-innovation/i-met-an-ai.md` - transcript of relational AI session exploring shame, meaning, and being met
+- `looker-wre-connector/__tests__/endpoints.playwright.test.js` - the tested backstop that emerged from this session
