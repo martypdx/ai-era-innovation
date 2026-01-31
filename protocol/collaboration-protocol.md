@@ -511,12 +511,12 @@ Sometimes the right move is to push through friction rather than work around it.
 
 **When to push through vs. move on:**
 
-| Signal | Push through | Move on |
-|--------|--------------|---------|
-| **Barrier type** | Setup cost, one-time investment | Recurring, fundamental incompatibility |
-| **Payoff horizon** | Unlocks easier future work | Only solves immediate problem |
-| **Information quality** | Partial indicator, assumptions may be wrong | Clear indicator, well-understood |
-| **Energy cost** | High but bounded | Unbounded or escalating |
+| Signal                  | Push through                                | Move on                                |
+| ----------------------- | ------------------------------------------- | -------------------------------------- |
+| **Barrier type**        | Setup cost, one-time investment             | Recurring, fundamental incompatibility |
+| **Payoff horizon**      | Unlocks easier future work                  | Only solves immediate problem          |
+| **Information quality** | Partial indicator, assumptions may be wrong | Clear indicator, well-understood       |
+| **Energy cost**         | High but bounded                            | Unbounded or escalating                |
 
 ### "What Assumption Is Wrong?"
 
